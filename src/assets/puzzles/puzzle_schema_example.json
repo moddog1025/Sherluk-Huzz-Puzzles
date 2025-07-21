@@ -1,31 +1,76 @@
 {
   "id": 1,
-  "date": "2025-07-21",
+  "date": "2025-07-22",
   "difficulty": "Easy",
-  "seed": 162345987,
-  "signature": "d1a9e27bc25c405e",
+  "seed": 987654321,
+  "signature": "1a2b3c4d5e6f7g8h",
   "grid": [
-    ["A4","A1","A2","A5","A3"],
-    ["B2","B3","B5","B4","B1"],
-    ["C5","C4","C2","C1","C3"],
-    ["D1","D5","D3","D4","D2"],
-    ["E3","E2","E4","E1","E5"]
+    ["A2","A4","A1","A5","A3"],
+    ["B3","B1","B5","B2","B4"],
+    ["C5","C2","C3","C4","C1"],
+    ["D4","D5","D2","D1","D3"],
+    ["E1","E3","E4","E2","E5"]
   ],
   "clues": [
-    { "type_id": "SCP", "items": ["A1","C1"] },
-    { "type_id": "GT",  "items": ["A4","E4","A3"] },
-    { "type_id": "SCT", "items": ["B2","D2","E2"] },
-    { "type_id": "DC",  "items": ["D5","C5"] },
-    { "type_id": "TTO", "items": ["E1","E2","E3"] },
-    { "type_id": "ACP", "items": ["C4","C3"] },
-    { "type_id": "ACT", "items": ["A2","B2","E2"] },
-    { "type_id": "LO",  "items": ["B4","B5"] },
-    { "type_id": "SCP", "items": ["D4","C4"] },
-    { "type_id": "GT",  "items": ["A5","B4","D2"] },
-    { "type_id": "SCT", "items": ["C1","D1","E1"] },
-    { "type_id": "DC",  "items": ["E5","B5"] },
-    { "type_id": "TTO", "items": ["A3","A2","A1"] },
-    { "type_id": "LO",  "items": ["C2","C1"] },
-    { "type_id": "ACP", "items": ["D1","D2"] }
+    {
+      "type_id": "SCT",
+      "items": ["A3","B4","C1"]
+    },
+    {
+      "type_id": "SCP",
+      "items": ["D1","A5"]
+    },
+    {
+      "type_id": "SCP",
+      "items": ["C2","D5"]
+    },
+    {
+      "type_id": "SCP",
+      "items": ["E4","A1"]
+    },
+    {
+      "type_id": "DC",
+      "items": ["A2","A4"]
+    },
+    {
+      "type_id": "DC",
+      "items": ["E3","B3"]
+    },
+    {
+      "type_id": "TTO",
+      "items": ["A4","C2","D1"]
+    },
+    {
+      "type_id": "TTO",
+      "items": ["B5","C3","E2"]
+    },
+    {
+      "type_id": "ACP",
+      "items": ["C3","C4"]
+    },
+    {
+      "type_id": "ACP",
+      "items": ["D1","D2"]
+    },
+    {
+      "type_id": "ACT",
+      "items": ["C2","C3","C4"]
+    },
+    {
+      "type_id": "GT",
+      "items": ["A2","B2","A1"]
+    },
+    {
+      "type_id": "LO",
+      "items": ["E1","E2"]
+    },
+    {
+      "type_id": "LO",
+      "items": ["B5","B2"]
+    },
+    {
+      "type_id": "LO",
+      "items": ["A1","A5"]
+    }
   ]
 }

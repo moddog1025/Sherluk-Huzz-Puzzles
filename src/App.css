@@ -1,0 +1,330 @@
+/*─────────────────────────────────────────────────────────
+ Variables & Base
+─────────────────────────────────────────────────────────*/
+:root {
+  --bg-base:    #ede6dc;
+  --text-main:  #3c3c3c;
+  --panel:      #d6d2cf;
+  --panel-alt:  #c9c6c3;
+  --panel-soft: #e5e2df;
+  --accent:     #908d87;
+  --success:    #41d38a;
+}
+* { box-sizing: border-box; }
+html, body, #root {
+  margin:0; padding:0; min-height:100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-main);
+}
+
+/*─────────────────────────────────────────────────────────
+ Layout
+─────────────────────────────────────────────────────────*/
+.app-root { display:flex; flex-direction:column; min-height:100vh; }
+.app-shell {
+  width:100%; max-width:1200px;
+  margin:0 auto; padding:0 24px 48px;
+  display:flex; flex-direction:column; align-items:center;
+}
+.main-area {
+  width:100%; margin-top:12px;
+  display:flex; flex-direction:column; align-items:center;
+}
+
+/*─────────────────────────────────────────────────────────
+ Puzzle Container
+─────────────────────────────────────────────────────────*/
+.puzzle-container {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/*─────────────────────────────────────────────────────────
+ TOOLBARS (no background bars — just layout)
+─────────────────────────────────────────────────────────*/
+.puzzle-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 16px;
+  padding: 0;        /* no extra padding */
+  background: none;  /* transparent */
+  border: none;
+}
+
+.puzzle-label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.puzzle-label-main {
+  font-size: 26px;
+  font-weight: 795;
+  letter-spacing: 0.6px;
+  color: #4b4b4b;
+  margin-right: 8px;
+  margin-left: 16px;
+}
+
+/* Unique style for Clues: label */
+.clues-label {
+  font-size: 22px;
+  font-weight: 650;
+  color: #4b4b4b;
+  margin-right: 8px;
+  margin-left: 16px;
+  margin-top: 12px;
+}
+
+/*─────────────────────────────────────────────────────────
+ Pill Base Style
+─────────────────────────────────────────────────────────*/
+.pill {
+  display: inline-block;
+  background: var(--panel);
+  color: var(--text-main);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 10px;
+  transition: background .15s, color .15s;
+  border: none;
+  outline: none;
+  min-width: 60px;
+  text-align: center;
+  margin: 0;           /* reset any margin */
+}
+
+/*─────────────────────────────────────────────────────────
+ Meta‑Pills (date, difficulty, timer) — non‑interactive
+─────────────────────────────────────────────────────────*/
+.meta-pills {
+  display: flex;
+  gap: 8px;
+  margin-right: 12px;
+  margin-top: 6px;
+}
+.meta-pills .pill {
+  cursor: default;
+}
+
+/*─────────────────────────────────────────────────────────
+ Tab‑Pills (Row/Column) — interactive
+─────────────────────────────────────────────────────────*/
+.tab-pills {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.tab-pills .pill {
+  cursor: pointer;
+}
+.tab-pills .pill.active {
+  background: var(--accent);
+  color: #fff;
+}
+.tab-pills .pill:hover:not(.active) {
+  background: var(--panel-alt);
+}
+.tab-pills .pill:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/*─────────────────────────────────────────────────────────
+ Grid & Cells
+─────────────────────────────────────────────────────────*/
+.grid-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.grid-board {
+  display: grid;
+  gap: 12px;
+}
+
+.cell {
+  background: rgba(200,197,194,0.85);
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  transition: background .18s, box-shadow .18s;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+}
+.cell:hover {
+  background: var(--panel-alt);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.cell:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cell-solved {
+  width: 100%; height: 100%; padding: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.candidate {
+  display:flex; align-items:center; justify-content:center;
+}
+.shape { width:100%; height:100%; }
+
+/*─────────────────────────────────────────────────────────
+ Expanded Panel
+─────────────────────────────────────────────────────────*/
+.backdrop {
+  position: fixed; inset:0;
+  background: rgba(0,0,0,0.1); backdrop-filter: blur(1px);
+  cursor:pointer;
+}
+.expanded-panel {
+  background:#fbfafa; border:4px solid var(--accent);
+  border-radius:20px; padding:16px;
+  display:flex; flex-direction:column;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.expanded-grid { flex:1; display:grid; gap:12px; }
+.expanded-option {
+  background: var(--panel-soft); border:none; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:background .15s,transform .15s;
+}
+.expanded-option:hover { background:#dad7d4; transform:translateY(-2px); }
+.expanded-option:focus { outline:2px solid var(--accent); outline-offset:2px; }
+
+/*─────────────────────────────────────────────────────────
+ Clue Strip
+─────────────────────────────────────────────────────────*/
+.clue-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 32px; /* row, col gap */
+  justify-content: center;
+  margin-top: 32px;
+  max-width: calc(5 * 108px + 4 * 12px); /* 5 cells + 4 gaps, matches puzzle grid */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clue-card {
+  background: var(--panel); padding:8px 16px; border-radius:12px;
+  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  display:flex; align-items:center;
+}
+.clue-line, .clue-line-vertical {
+  display:flex; gap:8px;
+}
+.clue-line-vertical { flex-direction:column; align-items:center; }
+.clue-icon { width:36px; height:36px; }
+
+/*─────────────────────────────────────────────────────────
+ Footer & Modal
+─────────────────────────────────────────────────────────*/
+.footer {
+  margin-top:40px; font-size:12px; color:#555; opacity:0.6; text-align:center;
+}
+.solve-modal {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.4);
+  display:flex; align-items:center; justify-content:center;
+}
+.solve-modal-inner {
+  background:#fff; border-radius:16px; padding:32px; width:300px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.25);
+  display:flex; flex-direction:column; align-items:center; gap:20px;
+}
+.solve-title { margin:0; color:var(--success); font-size:28px; }
+.solve-time  { margin:0; font-size:14px; }
+.mono { font-family:"Courier New",monospace; }
+.btn-primary {
+  background:var(--success); color:#fff;
+  border:none; border-radius:8px; padding:10px 16px; font-size:14px;
+  cursor:pointer; transition:background .15s;
+}
+.btn-primary:hover { background:#155234; }
+.btn-primary:focus { outline:2px solid #0c3a23; outline-offset:2px; }
+
+/* push the “Clues:” toolbar down below the grid */
+.grid-wrapper + .puzzle-toolbar {
+  margin-top: 16px; /* tweak this value to taste */
+}
+
+/* Horizontal clues: grid layout, 3 per row, center-aligned */
+.clue-strip.horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 16px 32px;
+  justify-content: center;
+  margin-top: 32px;
+  max-width: calc(5 * 108px + 4 * 12px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Vertical clues: all clue-cards in a single row, centered */
+.clue-strip.vertical {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: calc(5 * 108px + 4 * 12px);
+  min-height: 52px; /* Ensures the footer stays below */
+}
+
+/* All clue-cards: shrink to fit content */
+.clue-card {
+  background: var(--panel);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: fit-content;
+  max-width: 300px;
+}
+
+.solve-modal-stats {
+  margin: 22px 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 10px;
+}
+.solve-modal-stat {
+  display: flex;
+  gap: 10px;
+  font-size: 1.0rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.stat-label {
+  font-size: 1.3em;
+  font-weight: 650;
+  color: #3e3e3e;
+  min-width: 90px;
+  margin-left: 7px;
+}
+.stat-value {
+  font-size: 1.1em;
+  font-weight: 460;
+  color: #232323;
+  background: #dfdcd7;
+  padding: 2px 12px;
+  border-radius: 10px;
+  margin-left: 10px;
+  align-items: right;
+}

@@ -1,0 +1,31 @@
+{
+  "id": 1,
+  "date": "2025-07-21",
+  "difficulty": "Easy",
+  "seed": 162345987,
+  "signature": "d1a9e27bc25c405e",
+  "grid": [
+    ["A4","A1","A2","A5","A3"],
+    ["B2","B3","B5","B4","B1"],
+    ["C5","C4","C2","C1","C3"],
+    ["D1","D5","D3","D4","D2"],
+    ["E3","E2","E4","E1","E5"]
+  ],
+  "clues": [
+    { "type_id": "SCP", "items": ["A1","C1"] },
+    { "type_id": "GT",  "items": ["A4","E4","A3"] },
+    { "type_id": "SCT", "items": ["B2","D2","E2"] },
+    { "type_id": "DC",  "items": ["D5","C5"] },
+    { "type_id": "TTO", "items": ["E1","E2","E3"] },
+    { "type_id": "ACP", "items": ["C4","C3"] },
+    { "type_id": "ACT", "items": ["A2","B2","E2"] },
+    { "type_id": "LO",  "items": ["B4","B5"] },
+    { "type_id": "SCP", "items": ["D4","C4"] },
+    { "type_id": "GT",  "items": ["A5","B4","D2"] },
+    { "type_id": "SCT", "items": ["C1","D1","E1"] },
+    { "type_id": "DC",  "items": ["E5","B5"] },
+    { "type_id": "TTO", "items": ["A3","A2","A1"] },
+    { "type_id": "LO",  "items": ["C2","C1"] },
+    { "type_id": "ACP", "items": ["D1","D2"] }
+  ]
+}

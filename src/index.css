@@ -1,0 +1,17 @@
+/* index.css – minimal reset so App.css fully controls layout & colors */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Remove default Vite dark/light theming & body flex centering */
+body {
+  background: transparent; /* actual background comes from App.css */
+}

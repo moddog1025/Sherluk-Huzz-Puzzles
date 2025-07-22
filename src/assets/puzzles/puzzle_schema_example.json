@@ -1,76 +1,122 @@
 {
-  "id": 1,
+  "id": 3,
   "date": "2025-07-22",
-  "difficulty": "Easy",
-  "seed": 987654321,
-  "signature": "1a2b3c4d5e6f7g8h",
-  "grid": [
-    ["A2","A4","A1","A5","A3"],
-    ["B3","B1","B5","B2","B4"],
-    ["C5","C2","C3","C4","C1"],
-    ["D4","D5","D2","D1","D3"],
-    ["E1","E3","E4","E2","E5"]
-  ],
+  "difficulty": "Normal",
   "clues": [
     {
+      "type_id": "SCP",
+      "items": [
+        "A3",
+        "E2"
+      ]
+    },
+    {
+      "type_id": "SCP",
+      "items": [
+        "A4",
+        "B5"
+      ]
+    },
+    {
       "type_id": "SCT",
-      "items": ["A3","B4","C1"]
+      "items": [
+        "B3",
+        "D2",
+        "E2"
+      ]
     },
     {
-      "type_id": "SCP",
-      "items": ["D1","A5"]
-    },
-    {
-      "type_id": "SCP",
-      "items": ["C2","D5"]
-    },
-    {
-      "type_id": "SCP",
-      "items": ["E4","A1"]
-    },
-    {
-      "type_id": "DC",
-      "items": ["A2","A4"]
-    },
-    {
-      "type_id": "DC",
-      "items": ["E3","B3"]
-    },
-    {
-      "type_id": "TTO",
-      "items": ["A4","C2","D1"]
-    },
-    {
-      "type_id": "TTO",
-      "items": ["B5","C3","E2"]
+      "type_id": "SCT",
+      "items": [
+        "B5",
+        "C2",
+        "D4"
+      ]
     },
     {
       "type_id": "ACP",
-      "items": ["C3","C4"]
+      "items": [
+        "E2",
+        "E3"
+      ]
     },
     {
       "type_id": "ACP",
-      "items": ["D1","D2"]
+      "items": [
+        "A1",
+        "A4"
+      ]
+    },
+    {
+      "type_id": "ACP",
+      "items": [
+        "E2",
+        "E5"
+      ]
     },
     {
       "type_id": "ACT",
-      "items": ["C2","C3","C4"]
+      "items": [
+        "B2",
+        "A3",
+        "E5"
+      ]
+    },
+    {
+      "type_id": "ACT",
+      "items": [
+        "E3",
+        "E2",
+        "B4"
+      ]
+    },
+    {
+      "type_id": "ACT",
+      "items": [
+        "A1",
+        "B3",
+        "B4"
+      ]
     },
     {
       "type_id": "GT",
-      "items": ["A2","B2","A1"]
+      "items": [
+        "A1",
+        "A4",
+        "B4"
+      ]
     },
     {
       "type_id": "LO",
-      "items": ["E1","E2"]
+      "items": [
+        "C2",
+        "E3"
+      ]
     },
     {
       "type_id": "LO",
-      "items": ["B5","B2"]
+      "items": [
+        "B1",
+        "A1"
+      ]
     },
     {
-      "type_id": "LO",
-      "items": ["A1","A5"]
+      "type_id": "GT",
+      "items": [
+        "A1",
+        "A4",
+        "B4"
+      ]
     }
-  ]
+  ],
+  "seed": 526721772,
+  "signature": "63d60d70f05a9202"
+,
+  "grid": [
+  ["A2", "A4", "A1", "A3", "A5"],
+  ["B1", "B5", "B2", "B3", "B4"],
+  ["C1", "C2", "C3", "C5", "C4"],
+  ["D3", "D4", "D1", "D2", "D5"],
+  ["E4", "E1", "E3", "E2", "E5"]
+]
 }

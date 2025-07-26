@@ -1,149 +1,141 @@
 {
-  "id": 3,
-  "seed": 466061906,
+  "id": 17,
+  "seed": 424868732,
   "date": "2025-07-25",
   "difficulty": "Normal",
-  "signature": "e6ebbf57ff1e9d4b",
+  "signature": "2f7885c0f0ba213e",
   "grid": [
     [
-      "A4",
-      "A5",
+      "A1",
       "A3",
       "A2",
-      "A1"
+      "A5",
+      "A4"
     ],
     [
-      "B2",
-      "B5",
       "B3",
+      "B2",
       "B4",
+      "B5",
       "B1"
     ],
     [
       "C3",
-      "C1",
       "C4",
-      "C5",
-      "C2"
+      "C1",
+      "C2",
+      "C5"
     ],
     [
+      "D2",
       "D5",
       "D4",
       "D1",
-      "D3",
-      "D2"
+      "D3"
     ],
     [
+      "E5",
       "E3",
-      "E1",
-      "E4",
       "E2",
-      "E5"
+      "E1",
+      "E4"
     ]
   ],
   "clues": [
     {
+      "type_id": "ACP",
+      "items": [
+        "A1",
+        "D5"
+      ]
+    },
+    {
       "type_id": "ACT",
       "items": [
-        "E2",
-        "B3",
-        "B5"
+        "A1",
+        "C4",
+        "E2"
       ]
     },
     {
       "type_id": "LO",
       "items": [
-        "A4",
-        "C2"
+        "B3",
+        "A3"
       ]
     },
     {
       "type_id": "SCP",
       "items": [
         "B2",
-        "E3"
-      ]
-    },
-    {
-      "type_id": "ACT",
-      "items": [
-        "A2",
-        "B3",
-        "D4"
-      ]
-    },
-    {
-      "type_id": "LO",
-      "items": [
-        "B3",
-        "E2"
-      ]
-    },
-    {
-      "type_id": "ACP",
-      "items": [
-        "A5",
-        "B2"
-      ]
-    },
-    {
-      "type_id": "SCP",
-      "items": [
-        "A5",
-        "E1"
+        "C4"
       ]
     },
     {
       "type_id": "SCT",
       "items": [
-        "B5",
-        "C1",
-        "D4"
+        "B3",
+        "C3",
+        "E5"
       ]
     },
     {
       "type_id": "ACT",
       "items": [
-        "E1",
-        "A3",
-        "D3"
+        "C3",
+        "E3",
+        "A2"
       ]
     },
     {
       "type_id": "LO",
       "items": [
-        "E4",
-        "C2"
-      ]
-    },
-    {
-      "type_id": "ACP",
-      "items": [
-        "A2",
-        "B1"
-      ]
-    },
-    {
-      "type_id": "ACT",
-      "items": [
-        "D4",
-        "A3",
+        "A5",
         "C5"
       ]
     },
     {
+      "type_id": "ACP",
+      "items": [
+        "D4",
+        "D5"
+      ]
+    },
+    {
       "type_id": "SCP",
       "items": [
-        "D5",
-        "E3"
+        "B4",
+        "C1"
       ]
     },
     {
       "type_id": "SCT",
       "items": [
-        "B3",
-        "C4",
-        "D1"
+        "A1",
+        "C3",
+        "D2"
+      ]
+    },
+    {
+      "type_id": "ACT",
+      "items": [
+        "A3",
+        "C1",
+        "E1"
+      ]
+    },
+    {
+      "type_id": "LO",
+      "items": [
+        "B5",
+        "D3"
+      ]
+    },
+    {
+      "type_id": "ACP",
+      "items": [
+        "A4",
+        "A5"
       ]
     }
   ]
